@@ -14,328 +14,392 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
 
 <style>
-  :root {
-    --emerald: #1F8E6B;
-    --emerald-dark: #12523f;
-    --emerald-light: #f0f7f4;
-    --gold: #C9A227;
-    --ink: #1a2420;
-    --dim: #44524b; /* Enhanced contrast for accessibility */
-    --border: #e3e8e5;
-    --bg: #fbfcfb;
-    --card-bg: #ffffff;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    --transition: all 0.25s ease;
-  }
+:root {
+--emerald: #1F8E6B;
+--emerald-dark: #12523f;
+--emerald-light: #f0f7f4;
+--gold: #C9A227;
+--ink: #1a2420;
+--dim: #44524b; /* Enhanced contrast for accessibility */
+--border: #e3e8e5;
+--bg: #fbfcfb;
+--card-bg: #ffffff;
+--shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+--transition: all 0.25s ease;
+}
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --emerald: #26b287;
-      --emerald-dark: #0f3d30;
-      --emerald-light: #162a22;
-      --gold: #dfb631;
-      --ink: #f1f5f3;
-      --dim: #a1b0a9; /* Better contrast for dark mode */
-      --border: #2d3b34;
-      --bg: #0f1513;
-      --card-bg: #151e1a;
-      --shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    }
-  }
+@media (prefers-color-scheme: dark) {
+:root {
+--emerald: #26b287;
+--emerald-dark: #0f3d30;
+--emerald-light: #162a22;
+--gold: #dfb631;
+--ink: #f1f5f3;
+--dim: #a1b0a9; /* Better contrast for dark mode */
+--border: #2d3b34;
+--bg: #0f1513;
+--card-bg: #151e1a;
+--shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+}
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    line-height: 1.65;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+body {
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+background: var(--bg);
+color: var(--ink);
+line-height: 1.65;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
 
-  header {
-    background: linear-gradient(135deg, var(--emerald), var(--emerald-dark));
-    color: #fff;
-    padding: 48px 24px 40px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  }
+header {
+background: linear-gradient(135deg, var(--emerald), var(--emerald-dark));
+color: #fff;
+padding: 48px 24px 40px;
+text-align: center;
+box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
 
-  header h1 {
-    margin: 0 0 8px;
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-  }
+header h1 {
+margin: 0 0 8px;
+font-size: 26px;
+font-weight: 700;
+letter-spacing: -0.5px;
+}
 
-  header p {
-    margin: 0;
-    opacity: 0.9;
-    font-size: 14px;
-    font-weight: 400;
-  }
+header p {
+margin: 0;
+opacity: 0.9;
+font-size: 14px;
+font-weight: 400;
+}
 
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 16px 24px;
-    background: var(--card-bg);
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    flex-wrap: wrap;
-    z-index: 100;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-  }
+nav {
+display: flex;
+justify-content: center;
+gap: 10px;
+padding: 16px 24px;
+background: var(--card-bg);
+border-bottom: 1px solid var(--border);
+position: sticky;
+top: 0;
+flex-wrap: wrap;
+z-index: 100;
+box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
 
-  nav a {
-    color: var(--emerald);
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    background: var(--card-bg);
-    transition: var(--transition);
-  }
+nav a {
+color: var(--emerald);
+text-decoration: none;
+font-size: 13px;
+font-weight: 600;
+padding: 8px 16px;
+border-radius: 20px;
+border: 1px solid var(--border);
+background: var(--card-bg);
+transition: var(--transition);
+}
 
-  nav a:hover, nav a:focus {
-    background: var(--emerald-light);
-    border-color: var(--emerald);
-    outline: none;
-  }
+nav a:hover, nav a:focus {
+background: var(--emerald-light);
+border-color: var(--emerald);
+outline: none;
+}
 
-  nav a:focus-visible {
-    box-shadow: 0 0 0 3px rgba(31, 142, 107, 0.4);
-  }
+nav a:focus-visible {
+box-shadow: 0 0 0 3px rgba(31, 142, 107, 0.4);
+}
 
-  main {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
-    flex-grow: 1;
-  }
+main {
+max-width: 720px;
+margin: 0 auto;
+padding: 40px 24px 80px;
+flex-grow: 1;
+}
 
-  section {
-    margin-bottom: 48px;
-    background: var(--card-bg);
-    padding: 28px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    scroll-margin-top: 80px; /* Offset for sticky nav when anchor-linking */
-  }
+section {
+margin-bottom: 48px;
+background: var(--card-bg);
+padding: 28px;
+border-radius: 12px;
+border: 1px solid var(--border);
+box-shadow: var(--shadow);
+scroll-margin-top: 80px; /* Offset for sticky nav when anchor-linking */
+}
 
-  section h2 {
-    color: var(--emerald);
-    font-size: 20px;
-    font-weight: 700;
-    border-bottom: 2px solid var(--gold);
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-  }
+section h2 {
+color: var(--emerald);
+font-size: 20px;
+font-weight: 700;
+border-bottom: 2px solid var(--gold);
+padding-bottom: 8px;
+margin-bottom: 8px;
+}
 
-  section .updated {
-    color: var(--dim);
-    font-size: 12px;
-    margin-bottom: 24px;
-    font-style: italic;
-  }
+section .updated {
+color: var(--dim);
+font-size: 12px;
+margin-bottom: 24px;
+font-style: italic;
+}
 
-  section p {
-    white-space: pre-line;
-    font-size: 15px;
-    color: var(--ink);
-  }
+section p {
+white-space: pre-line;
+font-size: 15px;
+color: var(--ink);
+}
 
-  section p strong {
-    color: var(--emerald);
-    font-weight: 600;
-  }
+section p strong {
+color: var(--emerald);
+font-weight: 600;
+display: inline-block;
+margin-top: 14px;
+}
 
-  /* Back to Top Button */
-  #back-to-top {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background: var(--emerald);
-    color: #ffffff;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: var(--transition);
-    z-index: 99;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
+/* Back to Top Button */
+#back-to-top {
+position: fixed;
+bottom: 24px;
+right: 24px;
+background: var(--emerald);
+color: #ffffff;
+width: 44px;
+height: 44px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+font-size: 20px;
+font-weight: bold;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+transition: var(--transition);
+z-index: 99;
+border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-  #back-to-top:hover, #back-to-top:focus {
-    background: var(--emerald-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-    outline: none;
-  }
+#back-to-top:hover, #back-to-top:focus {
+background: var(--emerald-dark);
+transform: translateY(-3px);
+box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+outline: none;
+}
 
-  #back-to-top:focus-visible {
-    box-shadow: 0 0 0 3px rgba(31, 142, 107, 0.4);
-  }
+#back-to-top:focus-visible {
+box-shadow: 0 0 0 3px rgba(31, 142, 107, 0.4);
+}
 
-  footer {
-    text-align: center;
-    padding: 32px 24px;
-    color: var(--dim);
-    font-size: 13px;
-    border-top: 1px solid var(--border);
-    background: var(--card-bg);
-  }
+footer {
+text-align: center;
+padding: 32px 24px;
+color: var(--dim);
+font-size: 13px;
+border-top: 1px solid var(--border);
+background: var(--card-bg);
+}
 
-  footer a {
-    color: var(--emerald);
-    text-decoration: none;
-    font-weight: 500;
-  }
+footer a {
+color: var(--emerald);
+text-decoration: none;
+font-weight: 500;
+}
 
-  footer a:hover {
-    text-decoration: underline;
-  }
+footer a:hover {
+text-decoration: underline;
+}
 </style>
 </head>
 <body id="top">
 
 <header>
-  <h1>🕌 Taqwa</h1>
-  <p>Gizlilik Politikası & Kullanım Koşulları / Privacy Policy & Terms of Use</p>
+<h1>🕌 Taqwa</h1>
+<p>Gizlilik Politikası & Kullanım Koşulları / Privacy Policy & Terms of Use</p>
 </header>
 
 <nav aria-label="Sayfa içi navigasyon">
-  <a href="#privacy-tr">Gizlilik (TR)</a>
-  <a href="#terms-tr">Koşullar (TR)</a>
-  <a href="#privacy-en">Privacy (EN)</a>
-  <a href="#terms-en">Terms (EN)</a>
+<a href="#privacy-tr">Gizlilik (TR)</a>
+<a href="#terms-tr">Koşullar (TR)</a>
+<a href="#privacy-en">Privacy (EN)</a>
+<a href="#terms-en">Terms (EN)</a>
 </nav>
 
 <main>
 
 <section id="privacy-tr" lang="tr">
-<h2>Gizlilik Politikası</h2>
-<div class="updated">Son güncelleme: 3 Temmuz 2026</div>
-<p>Taqwa, mahremiyetine saygı duyar. Bu politika hangi verilerin nasıl işlendiğini açıklar.
-
-<strong>1. VERİLERİN SAKLANDIĞI YER</strong>
-Namaz geçmişin, ayarların, hedeflerin, ruh hâli kayıtların, tesbih istatistiklerin ve onboarding cevapların (isim, e-posta, yaş aralığı dahil) YALNIZCA senin cihazında saklanır. Taqwa'nın kendi sunucusu yoktur; bu veriler bize veya üçüncü kişilere gönderilmez.
-
-<strong>2. KONUM</strong>
-Konumun, namaz vakitlerini hesaplamak ve kıble yönünü göstermek için kullanılır. Konum verisi vakit hesaplama servisine (aladhan.com) yalnızca enlem/boylam olarak iletilir; cihazında önbelleğe alınır, tarafımızca saklanmaz ve HİÇBİR ZAMAN satılmaz.
-
-<strong>3. ANALİTİK VE ÇÖKME RAPORLARI</strong>
-Uygulamayı iyileştirmek için Google Firebase Analytics ve Crashlytics kullanılır. Bunlar anonim kullanım istatistikleri (ör. hangi ekranın açıldığı) ve çökme kayıtları toplar. Bu veriler kimliğinle eşleştirilmez ve reklam amacıyla kullanılmaz.
-
-<strong>4. GERİ BİLDİRİM</strong>
-Geri bildirim gönderirsen mesajın, (verdiysen) adın ve e-posta adresin yalnızca sana dönüş yapabilmemiz için e-posta servisi (EmailJS) üzerinden geliştiriciye iletilir.
-
-<strong>5. SATIN ALMALAR</strong>
-Abonelik ödemeleri tamamen App Store / Google Play tarafından işlenir; ödeme bilgilerine erişimimiz yoktur. Abonelik durumu RevenueCat servisi üzerinden doğrulanır.
-
-<strong>6. REKLAM VE VERİ SATIŞI</strong>
-Taqwa'da reklam yoktur. Verilerin hiçbir üçüncü tarafa satılmaz veya pazarlama amacıyla paylaşılmaz.
-
+<h2>Gizlilik Politikası ve Aydınlatma Metni</h2>
+<div class="updated">Son güncelleme: 29 Ekim 2026</div>
+<p>Bu metin, Taqwa'yı kullanırken hangi kişisel verilerinin, hangi amaçla ve kimlerle işlendiğini 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında açıklar.
+<strong>1. VERİ SORUMLUSU</strong>
+Taqwa uygulamasının geliştiricisi.
+İletişim: <a href="mailto:taqwanamaz@gmail.com">taqwanamaz@gmail.com</a>
+<strong>2. KISACA</strong>
+• Namaz kayıtların, ruh hâlin, hedeflerin ve tanışma cevapların yalnızca telefonunda kalır.
+• Telefonundan dışarı çıkanlar: namaz vakitleri için yaklaşık konumun; kullanım istatistikleri ve çökme raporları (Ayarlar'dan kapatabilirsin); aile özelliğini kullanırsan, onayınla, aile paylaşımı; abonelik kayıtları; geri bildirim gönderirsen mesajın.
+• Uygulamada reklam gösterilmez, verilerin satılmaz.
+<strong>3. YALNIZCA TELEFONUNDA KALAN VERİLER</strong>
+Namaz ve kaza kayıtların, ruh hâli kayıtların, manevi istikrar puanın, hedeflerin, tanışma sorularına verdiğin cevaplar (adın dahil), tesbih istatistiklerin, yer imlerin, takvim notların, tam konumun ve ayarların yalnızca cihazında saklanır. Bu bilgiler, aşağıda yazan durumlar dışında bize ya da başkasına gönderilmez.
+Telefonunun yedekleme özelliği açıksa uygulama verileri kendi Google veya Apple hesabına yedeklenebilir; bu yedeğe biz erişemeyiz.
+<strong>4. TELEFONUNDAN ÇIKAN VERİLER</strong>
+<strong>4.1 Namaz vakitleri ve konum</strong>
+• Ne gider: Konumunun yaklaşık hâli (yaklaşık 1 km'ye yuvarlanmış enlem ve boylam), tarih ve seçtiğin hesap yöntemi.
+• Kime: Vakitleri hesaplayan Aladhan.com (Islamic Network). Şehir adını göstermek için aynı yaklaşık konum telefonunun adres servisine de gider (Android'de Google, iPhone'da Apple).
+• Tam konumun telefondan çıkmaz; kıble yönü, çevrimdışı vakit hesabı ve ana ekran aracı (widget) için yalnızca cihazda kullanılır. Konum izni vermezsen İstanbul vakitleri gösterilir.
+• Hukuki sebep: Uygulamanın sunduğu hizmetin yerine getirilmesi (KVKK m.5/2-c).
+<strong>4.2 Kullanım istatistikleri ve çökme raporları</strong>
+• Ne gider: Açılan ekranlar; tanışma sorularının tamamlandığı, "Taqwa'yı nereden duydun" cevabın ve bildirim tercihin; abonelik ekranının açılması ve satın alma denemeleri; çökme ve hata kayıtları; cihaz modeli, işletim sistemi, uygulama sürümü, yaklaşık ülke ve bölge, uygulamaya özel bir kurulum kimliği ve telefonunun reklam kimliği.
+• Gitmeyenler: Adın, namaz kayıtların ve ruh hâlin gönderilmez.
+• Kime: Google (Firebase Analytics ve Firebase Crashlytics).
+• Neden: Uygulamayı iyileştirmek, hataları bulup düzeltmek ve Taqwa'nın tanıtım kampanyalarının (Google Ads) sonuçlarını ölçmek.
+• Kontrol sende: Ayarlar → Hakkında → Gizlilik → "Kullanım istatistikleri" ile kapatabilirsin. Kapatınca istatistik ve çökme raporu gönderilmez, cihazdaki istatistik kimliği de sıfırlanır. Reklam kimliğini telefonunun ayarlarından ayrıca sıfırlayabilir veya silebilirsin.
+• Hukuki sebep: Meşru menfaatimiz (KVKK m.5/2-f).
+<strong>4.3 Aile paylaşımı (yalnızca kullanırsan)</strong>
+• Ne gider: Görünen adın, rolün, o gün işaretlediğin vakitler, serin ve onay tarihin; grubun adı ve davet kodu; Firebase'de sana özel oluşturulan isimsiz kimlik.
+• Kime: Google (Firebase Firestore ve Firebase Authentication). Bu bilgileri yalnızca gruptaki aile üyelerin görür.
+• Namaz bilgisi dinî inanca ilişkin özel nitelikli kişisel veridir. Bu yüzden grup kurarken veya bir gruba katılırken açık rızan alınır; onay vermeden paylaşım başlamaz (KVKK m.6).
+• Gruptan istediğin an ayrılabilirsin; ayrılınca senin bilgilerin gruptan silinir.
+• 18 yaşından küçükler aile grubuna ebeveyninin bilgisi ve onayıyla katılmalıdır.
+<strong>4.4 Abonelik</strong>
+• Ödemeyi Google Play veya App Store alır; kart bilgilerini biz hiç görmeyiz.
+• Aboneliğinin geçerli olup olmadığını doğrulamak için RevenueCat'e isimsiz bir kullanıcı kimliği, satın alma kayıtları (ürün, tarih, mağaza ülkesi) ve cihaz bilgisi gider.
+• Hukuki sebep: Abonelik sözleşmesinin kurulması ve yerine getirilmesi (KVKK m.5/2-c).
+<strong>4.5 Kur'an içerikleri</strong>
+Ayetler alquran.cloud'dan, ayet sesleri everyayah.com'dan yüklenir. Bu servisler, her internet bağlantısında olduğu gibi, IP adresini ve hangi ayet ya da surenin istendiğini görebilir. Onlara başka bir bilgi göndermeyiz.
+<strong>4.6 Geri bildirim (yalnızca gönderirsen)</strong>
+• Ne gider: Mesajın, seçtiğin konu ve profilindeki adın. Uygulamanın eski bir sürümünde e-posta adresini verdiysen o da eklenir.
+• Kime: EmailJS e-posta servisi üzerinden geliştiricinin e-posta kutusuna (Gmail).
+• Neden: Sana cevap verebilmek. Hukuki sebep: Talebinin yerine getirilmesi (KVKK m.5/2-c).
+<strong>4.7 Uygulama güncellemeleri</strong>
+Uygulama, yeni sürüm olup olmadığını Expo'nun güncelleme servisine (EAS Update) sorar. Bu sırada uygulama sürümü, platform, rastgele bir kurulum kimliği ve IP adresi iletilir.
+<strong>5. YURT DIŞINA AKTARIM</strong>
+Yukarıda adı geçen servis sağlayıcıların (Google, RevenueCat, Expo, EmailJS, Islamic Network ve everyayah) sunucuları Türkiye dışındadır; bu nedenle ilgili veriler yurt dışına aktarılır. Aile paylaşımında bilgilerinin yurt dışında saklanmasına ayrıca onay verirsin. Aktarımlar KVKK m.9 ve ilgili mevzuat çerçevesinde yapılır.
+<strong>6. SAKLAMA SÜRELERİ</strong>
+• Telefonundaki veriler: Sen silene kadar.
+• Kullanım istatistikleri: En fazla 14 ay. Çökme raporları: yaklaşık 90 gün.
+• Aile paylaşımı: Gruptan ayrılana kadar.
+• Abonelik kayıtları: Abonelik süresince ve yasal saklama süreleri boyunca.
+• Geri bildirim e-postaları: Talebinle ilgilendiğimiz süre boyunca.
 <strong>7. VERİLERİNİ SİLME</strong>
-Ayarlar → Hesap → "Profili sıfırla" ile cihazındaki tüm Taqwa verileri kalıcı olarak silinir.
-
-<strong>8. İLETİŞİM</strong>
-Sorular için: <a href="mailto:taqwanamaz@gmail.com">taqwanamaz@gmail.com</a></p>
+• Ayarlar → Hesap → "Profili sıfırla": Profilin, namaz geçmişin, istatistiklerin, takvim notların, yer imlerin, tesbih ve kaza kayıtların ve ayarların silinir; aile grubundaysan gruptan çıkarsın.
+• Uygulamayı telefondan kaldırırsan cihazdaki tüm Taqwa verileri silinir.
+• Google, RevenueCat veya EmailJS'teki kayıtlarının silinmesini istersen bize e-posta gönder.
+<strong>8. HAKLARIN (KVKK m.11)</strong>
+Kişisel verilerinin işlenip işlenmediğini öğrenme; işlenmişse bilgi isteme; işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme; yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme; eksik veya yanlış işlenmişse düzeltilmesini isteme; KVKK m.7'deki şartlar çerçevesinde silinmesini veya yok edilmesini isteme; bu işlemlerin aktarıldığı üçüncü kişilere bildirilmesini isteme; yalnızca otomatik sistemlerle analiz edilmesi sonucunda aleyhine bir sonuç çıkmasına itiraz etme ve kanuna aykırı işleme nedeniyle zarara uğrarsan zararın giderilmesini talep etme hakların vardır.
+Başvurunu <a href="mailto:taqwanamaz@gmail.com">taqwanamaz@gmail.com</a> adresine gönderebilirsin; en geç 30 gün içinde ücretsiz yanıtlarız. Yanıtımızdan memnun kalmazsan Kişisel Verileri Koruma Kurulu'na şikâyette bulunabilirsin.
+<strong>9. DEĞİŞİKLİKLER</strong>
+Bu metin güncellenebilir; önemli değişiklikler uygulama içinden duyurulur.
+<strong>10. İLETİŞİM</strong>
+<a href="mailto:taqwanamaz@gmail.com">taqwanamaz@gmail.com</a></p>
 </section>
 
 <section id="terms-tr" lang="tr">
 <h2>Kullanım Koşulları</h2>
-<div class="updated">Son güncelleme: 3 Temmuz 2026</div>
+<div class="updated">Son güncelleme: 29 Ekim 2026</div>
 <p><strong>1. HİZMET</strong>
 Taqwa; namaz vakitleri, kıble yönü, Kur'an okuma, dua/zikir ve ibadet takibi sunan bir mobil uygulamadır.
-
 <strong>2. VAKİTLERİN DOĞRULUĞU</strong>
 Namaz vakitleri aladhan.com servisi ve cihaz içi astronomik hesaplama ile sağlanır. Vakitler yüksek doğruluklu olsa da küçük sapmalar olabilir; kritik durumlarda yerel müftülük/cami vakitlerini esas al.
-
 <strong>3. ABONELİK</strong>
-Premium abonelik, seçilen süre sonunda otomatik yenilenir. Aboneliği App Store veya Google Play hesabından istediğin zaman iptal edebilirsin. Ücretler mağaza hesabına tahakkuk eder.
-
+Tanışma sorularını bitirdikten sonraki ilk 7 gün Taqwa'yı ücretsiz kullanırsın. Bu süre sonunda kullanmaya devam etmek için Premium abonelik gerekir; ücretsiz hafta kendiliğinden ücretli aboneliğe dönüşmez. Abonelik fiyatı, abone olmadan önce ekranda ve mağazada gösterilir.
+Premium abonelik, seçilen süre sonunda otomatik yenilenir. Aboneliği App Store veya Google Play hesabından istediğin zaman iptal edebilirsin; iptal, içinde bulunduğun dönemin sonunda geçerli olur. Ücretler mağaza hesabına tahakkuk eder.
 <strong>4. SORUMLULUK SINIRI</strong>
 Uygulama "olduğu gibi" sunulur. Bildirimlerin iletilmesi işletim sistemi kısıtlarına (pil optimizasyonu, rahatsız etmeyin modu vb.) tabidir; kaçırılan bildirimlerden doğan sonuçlardan Taqwa sorumlu tutulamaz.
-
 <strong>5. FİKRİ MÜLKİYET</strong>
-Uygulama içeriği ve tasarımı Taqwa'ya aittir. Kur'an metni ve mealler ilgili kaynakların telif koşullarına tabidir.
-
+Uygulamanın tasarımı ve Taqwa'nın kendi hazırladığı içerikler Taqwa'ya aittir. Kur'an metni, mealler ve ayet seslerinin kaynakları ve lisansları Ayarlar → Hakkında → Kaynaklar ve Lisanslar sayfasında yazar; bu içeriklerin hakları sahiplerine aittir.
 <strong>6. DEĞİŞİKLİKLER</strong>
 Bu koşullar güncellenebilir; önemli değişiklikler uygulama içinden duyurulur.
-
 <strong>7. İLETİŞİM</strong>
 <a href="mailto:taqwanamaz@gmail.com">taqwanamaz@gmail.com</a></p>
 </section>
 
 <section id="privacy-en" lang="en">
-<h2>Privacy Policy</h2>
-<div class="updated">Last updated: July 3, 2026</div>
-<p>Taqwa respects your privacy. This policy explains what data is processed and how.
-
-<strong>1. WHERE YOUR DATA LIVES</strong>
-Your prayer history, settings, goals, mood records, tasbih statistics and onboarding answers (including name, email, age range) are stored ONLY on your device. Taqwa has no server of its own; this data is never sent to us or to third parties.
-
-<strong>2. LOCATION</strong>
-Your location is used to calculate prayer times and show the Qibla direction. Only latitude/longitude are sent to the prayer times service (aladhan.com); the result is cached on your device, never stored by us and NEVER sold.
-
-<strong>3. ANALYTICS & CRASH REPORTS</strong>
-We use Google Firebase Analytics and Crashlytics to improve the app. They collect anonymous usage statistics (e.g. which screen was opened) and crash logs. This data is not matched to your identity and is not used for advertising.
-
-<strong>4. FEEDBACK</strong>
-If you send feedback, your message, your name and email (if provided) are forwarded to the developer via an email service (EmailJS), solely so we can reply to you.
-
-<strong>5. PURCHASES</strong>
-Subscription payments are processed entirely by the App Store / Google Play; we never see your payment details. Subscription status is verified via RevenueCat.
-
-<strong>6. ADS & DATA SELLING</strong>
-Taqwa contains no ads. Your data is never sold or shared for marketing purposes.
-
+<h2>Privacy Policy &amp; Data Protection Notice</h2>
+<div class="updated">Last updated: October 29, 2026</div>
+<p>This notice explains which personal data is processed when you use Taqwa, for what purpose and with whom, as required by Türkiye's Personal Data Protection Law No. 6698 (KVKK).
+<strong>1. DATA CONTROLLER</strong>
+The developer of the Taqwa app.
+Contact: <a href="mailto:taqwanamaz@gmail.com">taqwanamaz@gmail.com</a>
+<strong>2. IN SHORT</strong>
+• Your prayer records, moods, goals and onboarding answers stay on your phone only.
+• What leaves your phone: your approximate location for prayer times; usage statistics and crash reports (you can turn these off in Settings); family sharing, with your consent, if you use the family feature; subscription records; and your message, if you send feedback.
+• The app shows no ads and your data is never sold.
+<strong>3. DATA THAT STAYS ON YOUR PHONE</strong>
+Your prayer and missed-prayer records, mood entries, spiritual consistency score, goals, onboarding answers (including your name), tasbih statistics, bookmarks, calendar notes, precise location and settings are stored only on your device. Except as described below, none of this is sent to us or anyone else.
+If your phone's backup feature is on, app data may be backed up to your own Google or Apple account; we cannot access that backup.
+<strong>4. DATA THAT LEAVES YOUR PHONE</strong>
+<strong>4.1 Prayer times and location</strong>
+• What is sent: Your approximate location (latitude and longitude rounded to about 1 km), the date and your chosen calculation method.
+• To whom: Aladhan.com (Islamic Network), which calculates the times. To show your city name, the same approximate location also goes to your phone's address service (Google on Android, Apple on iPhone).
+• Your precise location never leaves your phone; it is used on the device only for the Qibla direction, offline prayer times and the home-screen widget. If you do not allow location access, Istanbul times are shown.
+• Legal basis: Providing the app's service (KVKK art. 5/2-c).
+<strong>4.2 Usage statistics and crash reports</strong>
+• What is sent: Screens opened; that onboarding was completed, your answer to "How did you hear about Taqwa" and your notification preference; subscription screen views and purchase attempts; crash and error logs; device model, operating system, app version, approximate country and region, an app-specific installation ID and your phone's advertising ID.
+• What is not sent: Your name, prayer records and moods.
+• To whom: Google (Firebase Analytics and Firebase Crashlytics).
+• Why: To improve the app, find and fix bugs, and measure the results of Taqwa's promotional campaigns (Google Ads).
+• You are in control: Turn it off in Settings → About → Privacy → "Usage statistics". When off, no statistics or crash reports are sent and the statistics ID on your device is reset. You can also reset or delete your advertising ID in your phone's settings.
+• Legal basis: Our legitimate interest (KVKK art. 5/2-f).
+<strong>4.3 Family sharing (only if you use it)</strong>
+• What is sent: Your display name, role, the prayers you marked today, your streak and the date of your consent; the group name and invite code; an anonymous ID created for you in Firebase.
+• To whom: Google (Firebase Firestore and Firebase Authentication). Only your family members in the group can see this information.
+• Prayer information is special-category personal data relating to religious belief. That is why your explicit consent is asked when you create or join a group; nothing is shared until you consent (KVKK art. 6).
+• You can leave the group at any time; when you leave, your information is removed from the group.
+• Anyone under 18 should join a family group only with a parent's knowledge and consent.
+<strong>4.4 Subscription</strong>
+• Payment is taken by Google Play or the App Store; we never see your card details.
+• To check whether your subscription is active, an anonymous user ID, purchase records (product, date, store country) and device information are sent to RevenueCat.
+• Legal basis: Entering into and performing the subscription contract (KVKK art. 5/2-c).
+<strong>4.5 Quran content</strong>
+Verses are loaded from alquran.cloud and recitation audio from everyayah.com. As with any internet connection, these services can see your IP address and which verse or surah was requested. We send them nothing else.
+<strong>4.6 Feedback (only if you send it)</strong>
+• What is sent: Your message, the topic you chose and your profile name. If you gave your email in an older version of the app, it is included too.
+• To whom: The developer's mailbox (Gmail), via the EmailJS email service.
+• Why: So we can reply to you. Legal basis: Fulfilling your request (KVKK art. 5/2-c).
+<strong>4.7 App updates</strong>
+The app asks Expo's update service (EAS Update) whether a new version is available. This sends the app version, platform, a random installation ID and your IP address.
+<strong>5. TRANSFERS ABROAD</strong>
+The servers of the service providers named above (Google, RevenueCat, Expo, EmailJS, Islamic Network and everyayah) are outside Türkiye, so the related data is transferred abroad. For family sharing, you separately consent to your information being stored abroad. Transfers are made in line with KVKK art. 9 and related legislation.
+<strong>6. RETENTION</strong>
+• Data on your phone: Until you delete it.
+• Usage statistics: Up to 14 months. Crash reports: about 90 days.
+• Family sharing: Until you leave the group.
+• Subscription records: For the life of the subscription and any legal retention periods.
+• Feedback emails: For as long as we are handling your request.
 <strong>7. DELETING YOUR DATA</strong>
-Settings → Account → "Reset profile" permanently deletes all Taqwa data on your device.
-
-<strong>8. CONTACT</strong>
-Questions: <a href="mailto:taqwanamaz@gmail.com">taqwanamaz@gmail.com</a></p>
+• Settings → Account → "Reset profile": Deletes your profile, prayer history, statistics, calendar notes, bookmarks, tasbih and missed-prayer records and settings; if you are in a family group, you leave it.
+• Uninstalling the app deletes all Taqwa data on your device.
+• To have your records at Google, RevenueCat or EmailJS deleted, email us.
+<strong>8. YOUR RIGHTS (KVKK art. 11)</strong>
+You have the right to learn whether your personal data is processed; to request information if it is; to learn the purpose of processing and whether it is used accordingly; to know the third parties it is transferred to in Türkiye or abroad; to ask for correction if it is incomplete or wrong; to ask for its deletion or destruction under the conditions of KVKK art. 7; to ask that these actions be notified to the third parties it was transferred to; to object to a result against you arising solely from automated analysis; and to claim compensation if you suffer damage from unlawful processing.
+Send your request to <a href="mailto:taqwanamaz@gmail.com">taqwanamaz@gmail.com</a>; we will reply free of charge within 30 days at the latest. If you are not satisfied with our reply, you may file a complaint with the Turkish Personal Data Protection Authority (KVKK Board).
+<strong>9. CHANGES</strong>
+This notice may be updated; significant changes will be announced in the app.
+<strong>10. CONTACT</strong>
+<a href="mailto:taqwanamaz@gmail.com">taqwanamaz@gmail.com</a></p>
 </section>
 
 <section id="terms-en" lang="en">
 <h2>Terms of Use</h2>
-<div class="updated">Last updated: July 3, 2026</div>
+<div class="updated">Last updated: October 29, 2026</div>
 <p><strong>1. SERVICE</strong>
 Taqwa is a mobile app offering prayer times, Qibla direction, Quran reading, dua/dhikr and worship tracking.
-
 <strong>2. ACCURACY OF TIMES</strong>
 Prayer times are provided via the aladhan.com service and on-device astronomical calculation. While highly accurate, small deviations are possible; for critical situations, rely on your local mosque/mufti timetable.
-
 <strong>3. SUBSCRIPTION</strong>
-Premium subscription renews automatically at the end of the chosen period. You can cancel anytime from your App Store or Google Play account. Charges are billed to your store account.
-
+You can use Taqwa free for the first 7 days after completing onboarding. After that, a Premium subscription is required to keep using it; the free week never turns into a paid subscription by itself. The subscription price is shown on screen and in the store before you subscribe.
+Premium subscription renews automatically at the end of the chosen period. You can cancel anytime from your App Store or Google Play account; cancellation takes effect at the end of the current period. Charges are billed to your store account.
 <strong>4. LIMITATION OF LIABILITY</strong>
 The app is provided "as is". Notification delivery is subject to operating system constraints (battery optimization, do-not-disturb, etc.); Taqwa cannot be held responsible for consequences of missed notifications.
-
 <strong>5. INTELLECTUAL PROPERTY</strong>
-App content and design belong to Taqwa. Quran text and translations are subject to their sources' copyright terms.
-
+The app's design and the content created by Taqwa belong to Taqwa. The sources and licenses of the Quran text, translations and recitation audio are listed in Settings → About → Sources &amp; Licenses; all rights to that content belong to its owners.
 <strong>6. CHANGES</strong>
 These terms may be updated; significant changes will be announced in the app.
-
 <strong>7. CONTACT</strong>
 <a href="mailto:taqwanamaz@gmail.com">taqwanamaz@gmail.com</a></p>
 </section>
@@ -345,7 +409,7 @@ These terms may be updated; significant changes will be announced in the app.
 <a href="#top" id="back-to-top" title="Yukarı Git / Back to Top" aria-label="Yukarı Git / Back to Top">↑</a>
 
 <footer>
-  © 2026 Taqwa — <a href="mailto:taqwanamaz@gmail.com">taqwanamaz@gmail.com</a>
+© 2026 Taqwa — <a href="mailto:taqwanamaz@gmail.com">taqwanamaz@gmail.com</a>
 </footer>
 
 </body>
